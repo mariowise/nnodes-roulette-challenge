@@ -5,15 +5,15 @@
 <div class="panel panel-default">
 	<div class="panel-heading panel-heading-toolbox">
 		<div class="panel-title">
-			<%%= t(:edit, scope: [:helpers, :scaffold]) %>
+			<%= t(:edit, scope: [:helpers, :scaffold]) %>
 		</div>
 		<div class="panel-toolbar">
-			<%%= link_to 'Volver', @<%= singular_table_name %>, :class => "btn btn-link" %>
+			<%= link_to 'Volver', @game, :class => "btn btn-link" %>
 		</div>
 	</div>
 	<div class="panel-body">
 		
-		<%%= render 'form' %>
+		<%= render 'form' %>
 
 	</div>
 </div>
@@ -26,7 +26,7 @@
 	      <p>Al editar la información de un #, se <b>reemplaza</b> la infromación preexistente.</p>
 	    </div>  
 		
-		<%%= render "info" %>
+		<%= render "info" %>
 
 	</div>
 </div>

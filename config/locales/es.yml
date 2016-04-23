@@ -55,15 +55,13 @@ es:
   activerecord:
     errors:
       models:
-        user:
+        player:
           attributes:
-            email:
-              blank: "Es necesario definir un correo electrónico."
-            password:
-              blank: "Es necesario definir una contraseña."
-              too_short: "La contraseña es demasiado corta."
-            password_confirmation:
-              confirmation: "La contraseña y la confirmación deben ser iguales."
+            name:
+              too_short: El nombre debe tener como mínimo 1 letra 
+              too_long: El nombre debe tener como máximo 255 letras
+            balance:
+              greater_than_or_equal_to: El saldo debe ser igual o superior a 0
     attributes:
       company:
         name: "Nombre"
@@ -80,6 +78,11 @@ es:
         id: Código
         name: Nombre
         balance: Saldo
+        created_at: Fecha de creación
+        updated_at: Ultima actualización
+      game:
+        id: Código
+        created_at: Fecha de creación
     submit:
       create: "Crear nuevo"
       update: "Guardar"

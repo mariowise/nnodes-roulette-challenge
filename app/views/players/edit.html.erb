@@ -4,18 +4,13 @@
 		<div class="panel panel-default">
 			<div class="panel-heading panel-heading-toolbox">
 				<div class="panel-title">
-					<%= t(:edit, scope: [:helpers, :scaffold]) %>
+					Editar información del jugador
 				</div>
 				<div class="panel-toolbar">
 					<%= link_to 'Volver', @player, :class => "btn btn-link" %>
 				</div>
 			</div>
 			<div class="panel-body">
-
-				<div class="form-group">
-					<label for=""><%= t(:id, scope: [:helpers, :label, :player]) %></label>
-					<input type="text" class="form-control" disabled="disabled" value="<%= @player.id %>">
-				</div>
 
 				<%= render 'form' %>
 

@@ -1,0 +1,45 @@
+
+<div class="row">
+  <div class="col-md-9">
+
+    <div class="panel panel-default">
+      <div class="panel-heading panel-heading-toolbox">
+        <div class="panel-title">
+          Ultimas partidas simuladas
+        </div>
+        <div class="panel-toolbar">
+          <%= link_to new_game_path, :class => "btn btn-success" do %><i class="fa fa-plus"></i> Nuevo<% end %>
+        </div>
+      </div>
+      <div class="panel-body">
+
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th><%= t(:id, scope: [:helpers, :label, :game]) %></th>
+                <th width="170px"><%= t(:created_at, scope: [:helpers, :label, :game]) %></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @games.each do |game| %>
+              <tr>
+                <td><%= game.id %></td>
+                <td><%= game.created_at %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center"><%= will_paginate @games, renderer: BootstrapPagination::Rails %></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-3">
+
+    <%= render "info" %>
+
+  </div>
+</div>

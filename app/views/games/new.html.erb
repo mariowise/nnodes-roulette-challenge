@@ -5,15 +5,15 @@
 <div class="panel panel-default">
 	<div class="panel-heading panel-heading-toolbox">
 		<div class="panel-title">
-			<%%= t(:new, scope: [:helpers, :scaffold]) %>
+			<%= t(:new, scope: [:helpers, :scaffold]) %>
 		</div>
 		<div class="panel-toolbar">
-			<%%= link_to 'Volver', <%= index_helper %>_path, :class => "btn btn-link" %>
+			<%= link_to 'Volver', games_path, :class => "btn btn-link" %>
 		</div>
 	</div>
 	<div class="panel-body">
 		
-		<%%= render 'form' %>
+		<%= render 'form' %>
 
 	</div>
 </div>
@@ -21,7 +21,7 @@
 	</div>
 	<div class="col-md-3">
 		
-		<%%= render "info" %>
+		<%= render "info" %>
 
 	</div>
 </div>

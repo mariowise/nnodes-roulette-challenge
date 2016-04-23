@@ -1,0 +1,16 @@
+<% if flash[:notice] || flash[:alert] %>
+<div class="flash">
+	<% if flash[:notice] %>
+	<div class="alert alert-success">
+	    <a href="#" class="close" data-dismiss="alert"><i class="fa fa-times"></i></a>
+	    <i class="fa fa-check"></i> <%= flash[:notice] %>
+	</div>
+	<% end %>
+	<% if flash[:alert] %>
+	<div class="alert alert-danger callout callout-danger">
+	    <a href="#" class="close" data-dismiss="alert"><i class="fa fa-times"></i></a>
+	    <i class="fa fa-exclamation"></i> <%= flash[:alert] %>
+	</div>
+	<% end %>
+</div>
+<% end %>
