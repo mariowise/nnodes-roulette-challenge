@@ -1,0 +1,40 @@
+<h1><%%= t(:edit, scope: [:helpers, :scaffold]) %></h1>
+<p></p>
+<br>
+
+<div class="row">
+	<div class="col-md-9">
+		
+<div class="panel panel-default">
+	<div class="panel-heading panel-heading-toolbox">
+		<div class="panel-title">
+			<%%= t(:edit, scope: [:helpers, :scaffold]) %>
+		</div>
+		<div class="panel-toolbar">
+			<%%= link_to 'Volver', @<%= singular_table_name %>, :class => "btn btn-link" %>
+		</div>
+	</div>
+	<div class="panel-body">
+
+		<div class="form-group">
+			<label for=""><%%= t(:id, scope: [:helpers, :label, :<%= singular_table_name %>]) %></label>
+			<input type="text" class="form-control" disabled="disabled" value="<%%= @<%= singular_table_name %>.id %>">
+		</div>
+		
+		<%%= render 'form' %>
+
+	</div>
+</div>
+
+	</div>
+	<div class="col-md-3">
+
+		<div class="callout callout-warning">
+	      <h4><i class="fa fa-info-circle"></i> Editar #</h4>
+	      <p>Al editar la información de un #, se <b>reemplaza</b> la infromación preexistente.</p>
+	    </div>  
+		
+		<%%= render "info" %>
+
+	</div>
+</div>

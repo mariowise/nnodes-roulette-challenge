@@ -1,0 +1,90 @@
+es:
+  date:
+    abbr_day_names:
+    - Dom
+    - Lun
+    - Mar
+    - Mie
+    - Jue
+    - Vie
+    - Sab
+    abbr_month_names:
+    - 
+    - Ene
+    - Feb
+    - Mar
+    - Abr
+    - May
+    - Jun
+    - Jul
+    - Ago
+    - Sep
+    - Oct
+    - Nov
+    - Dic
+    day_names:
+    - Domingo
+    - Lunes
+    - Martes
+    - Miércoles
+    - Jueves
+    - Viernes
+    - Sabado
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
+    month_names:
+    - 
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+    order:
+    - :day
+    - :month
+    - :year
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Es necesario definir un correo electrónico."
+            password:
+              blank: "Es necesario definir una contraseña."
+              too_short: "La contraseña es demasiado corta."
+            password_confirmation:
+              confirmation: "La contraseña y la confirmación deben ser iguales."
+    attributes:
+      company:
+        name: "Nombre"
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    next_label: "Siguiente &#8594;"
+    page_gap: "&hellip;"
+  errors:
+    messages:
+     delete_association: "No ha sido posible eliminar este objeto puesto que existen otros que lo referencian."
+  helpers:
+    label:
+      player:
+        id: Código
+        name: Nombre
+        balance: Saldo
+    submit:
+      create: "Crear nuevo"
+      update: "Guardar"
+    scaffold:
+      new: "Nuevo"
+      edit: "Editar"
+      destroy: "Eliminar"
+      detail: "Detalle"

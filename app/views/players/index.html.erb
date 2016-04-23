@@ -1,0 +1,50 @@
+
+<div class="row">
+  <div class="col-md-9">
+
+    <div class="panel panel-default">
+      <div class="panel-heading panel-heading-toolbox">
+        <div class="panel-title">
+          Jugadores participando en la simulación
+        </div>
+        <div class="panel-toolbar">
+          <%= link_to new_player_path, :class => "btn btn-success" do %><i class="fa fa-plus"></i> Nuevo<% end %>
+        </div>
+      </div>
+      <div class="panel-body">
+
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th><%= t(:id, scope: [:helpers, :label, :player]) %></th>
+                <th><%= t(:name, scope: [:helpers, :label, :player]) %></th>
+                <th><%= t(:balance, scope: [:helpers, :label, :player]) %></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @players.each do |player| %>
+              <tr>
+                <td><%= player.id %></td>
+                <td>
+                  <%= link_to player do %><%= player.name %><% end %>
+                </td>
+                <td><%= as_money player.balance %></td>
+
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center"><%= will_paginate @players, renderer: BootstrapPagination::Rails %></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-3">
+
+    <%= render "info" %>
+
+  </div>
+</div>

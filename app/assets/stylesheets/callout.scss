@@ -1,0 +1,43 @@
+
+.callout {
+	padding: 10px;
+	border-radius: 4px;
+	border: 1px solid grey;
+	margin-bottom: 20px;
+
+	h4 {
+		margin-top: 5px;
+	}
+
+	p {
+		font-size: 13px;
+	}
+
+	&.callout-default {
+		h4 { color: darken($callout-default-border, 20%)!important; }
+		background: $callout-default-bg;
+		border-color: $callout-default-border;
+		border-left-width: $callout-border-lg;
+	}
+
+	&.callout-warning {
+		h4 { color: darken($callout-warning-border, 20%)!important; }
+		background: $callout-warning-bg;
+		border-color: $callout-warning-border;
+		border-left-width: $callout-border-lg;
+	}
+
+	&.callout-danger {
+		h4 { color: darken($callout-danger-border, 20%)!important; }
+		background: $callout-danger-bg;
+		border-color: $callout-danger-border;
+		border-left-width: $callout-border-lg;
+	}
+
+	&.callout-info {
+		h4 { color: darken($callout-info-border, 20%)!important; }
+		background: $callout-info-bg;
+		border-color: $callout-info-border;
+		border-left-width: $callout-border-lg;
+	}
+}
