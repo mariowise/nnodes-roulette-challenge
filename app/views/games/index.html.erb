@@ -17,8 +17,11 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th><%= t(:id, scope: [:helpers, :label, :game]) %></th>
+                <th width="100px"><%= t(:id, scope: [:helpers, :label, :game]) %></th>
                 <th width="170px"><%= t(:created_at, scope: [:helpers, :label, :game]) %></th>
+                <th><%= t(:bets, scope: [:helpers, :label, :game]) %></th>
+                <th><%= t(:amount, scope: [:helpers, :label, :game]) %></th>
+                <th width="150px"><%= t(:result, scope: [:helpers, :label, :game]) %></th>
               </tr>
             </thead>
 
@@ -27,6 +30,9 @@
               <tr>
                 <td><%= game.id %></td>
                 <td><%= game.created_at %></td>
+                <td><%= game.bets.count %></td>
+                <td><%= game.amount %></td>
+                <td><%= game.result %></td>
               </tr>
               <% end %>
             </tbody>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423230624) do
+ActiveRecord::Schema.define(version: 20160424144926) do
 
   create_table "bets", force: :cascade do |t|
     t.integer  "game_id"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20160423230624) do
 
   add_index "bets", ["game_id"], name: "index_bets_on_game_id"
   add_index "bets", ["player_id"], name: "index_bets_on_player_id"
+
+  create_table "forecasts", force: :cascade do |t|
+    t.date    "date"
+    t.string  "text"
+    t.boolean "rain", default: false
+  end
+
+  add_index "forecasts", ["date"], name: "index_forecasts_on_date"
 
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", null: false

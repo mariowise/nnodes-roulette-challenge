@@ -14,6 +14,8 @@ gem 'sdoc', '~>0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "will_paginate-bootstrap"
 gem 'font-awesome-sass', '~> 4.5.0'
+gem 'whenever', :require => false
+gem 'nokogiri'
 
 group :development, :test do
   gem 'rspec-rails', '~>3.0'

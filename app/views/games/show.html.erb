@@ -17,15 +17,15 @@
 				
 				<table class="table table-bordered">
 					<tbody>
-					<tr>
-						<th><%= t(:id, scope: [:helpers, :label, :game]) %></th>
-						<td><%= @game.id %></td>
-					</tr>
-											<tr>
-						  <th><%= t(:id, scope: [:helpers, :label, :game]) %>:</th>
-						  <td><%= @game.id %></td>
+						<tr>
+							<th><%= t(:id, scope: [:helpers, :label, :game]) %>:</th>
+							<td><%= @game.id %></td>
 						</tr>
-										</tbody>
+						<tr>
+							<th><%= t(:result, scope: [:helpers, :label, :game]) %>:</th>
+							<td><%= @game.result %></td>
+						</tr>
+					</tbody>
 				</table>
 
 			</div>

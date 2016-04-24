@@ -82,6 +82,9 @@ es:
         updated_at: Ultima actualización
       game:
         id: Código
+        result: Resultado
+        bets: Apuestas
+        amount: Pozo
         created_at: Fecha de creación
     submit:
       create: "Crear nuevo"
