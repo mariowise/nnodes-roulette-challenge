@@ -5,7 +5,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading panel-heading-toolbox">
 				<div class="panel-title">
-					<%= t(:detail, scope: [:helpers, :scaffold]) %>
+					Detalle de la partida
 				</div>
 				<div class="panel-toolbar">
 					<%= link_to 'Volver', games_path, :class => "btn btn-link" %>
@@ -19,12 +19,52 @@
 					<tbody>
 						<tr>
 							<th><%= t(:id, scope: [:helpers, :label, :game]) %>:</th>
-							<td><%= @game.id %></td>
+							<td><%= @game.get_code %></td>
+						</tr>
+						<tr>
+							<th><%= t(:created_at, scope: [:helpers, :label, :game]) %>:</th>
+							<td><%= @game.created_at %></td>
 						</tr>
 						<tr>
 							<th><%= t(:result, scope: [:helpers, :label, :game]) %>:</th>
 							<td><%= @game.result %></td>
 						</tr>
+						<tr>
+							<th><%= t(:bets, scope: [:helpers, :label, :game]) %>:</th>
+							<td><%= @game.bets.count %></td>
+						</tr>
+						<tr>
+							<th><%= t(:winners, scope: [:helpers, :label, :game]) %>:</th>
+							<td><%= @game.winners.count %></td>
+						</tr>
+						<tr>
+							<th><%= t(:amount, scope: [:helpers, :label, :game]) %>:</th>
+							<td><%= as_money @game.amount %></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h4>Apuestas</h4>
+				<table class="table">
+					<thead>
+						<tr>
+							<th width="100px"><%= t(:id, scope: [:helpers, :label, :bet]) %></th>
+							<th><%= t(:player, scope: [:helpers, :label, :bet]) %></th>
+							<th><%= t(:target, scope: [:helpers, :label, :bet]) %></th>
+							<th><%= t(:amount, scope: [:helpers, :label, :bet]) %></th>							
+							<th><%= t(:result, scope: [:helpers, :label, :bet]) %></th>							
+						</tr>
+					</thead>
+					<tbody>
+						<% @game.bets.each do |bet| %>
+						<tr>
+							<td><%= bet.get_code %></td>
+							<td><%= bet.player %></td>
+							<td><%= bet.target %></td>
+							<td><%= as_money bet.amount %></td>
+							<td><%= (bet.target == bet.game.result) ? "Ganador" : "Perdedor" %></td>
+						</tr>
+						<% end %>
 					</tbody>
 				</table>
 

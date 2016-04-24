@@ -27,13 +27,10 @@
             <tbody>
               <% @players.each do |player| %>
               <tr>
-                <td><%= player.id %></td>
-                <td>
-                  <%= link_to player do %><%= player.name %><% end %>
-                </td>
+                <td><%= link_to player do %><%= player.get_code %><% end %></td>
+                <td><%= player.name %></td>
                 <td><%= as_money player.balance %></td>
                 <td><%= player.created_at %></td>
-
               </tr>
               <% end %>
             </tbody>

@@ -19,19 +19,21 @@
               <tr>
                 <th width="100px"><%= t(:id, scope: [:helpers, :label, :game]) %></th>
                 <th width="170px"><%= t(:created_at, scope: [:helpers, :label, :game]) %></th>
-                <th><%= t(:bets, scope: [:helpers, :label, :game]) %></th>
+                <th class="text-center"><%= t(:bets, scope: [:helpers, :label, :game]) %></th>
+                <th class="text-center"><%= t(:winners, scope: [:helpers, :label, :game]) %></th>
                 <th><%= t(:amount, scope: [:helpers, :label, :game]) %></th>
-                <th width="150px"><%= t(:result, scope: [:helpers, :label, :game]) %></th>
+                <th width="120px"><%= t(:result, scope: [:helpers, :label, :game]) %></th>
               </tr>
             </thead>
 
             <tbody>
               <% @games.each do |game| %>
               <tr>
-                <td><%= game.id %></td>
+                <td><%= link_to game do %><%= game.get_code %><% end %></td>
                 <td><%= game.created_at %></td>
-                <td><%= game.bets.count %></td>
-                <td><%= game.amount %></td>
+                <td class="text-center"><%= game.bets.count %></td>
+                <td class="text-center"><%= game.winners.count %></td>
+                <td><%= as_money game.amount %></td>
                 <td><%= game.result %></td>
               </tr>
               <% end %>
@@ -46,6 +48,27 @@
   <div class="col-md-3">
 
     <%= render "info" %>
+
+    <hr>
+    <div class="text-center">Estadísticas</div>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-4 text-center">
+        <h4><%= Game.where(:result => "Verde").count %></h4>
+        <p>Verde</p>
+      </div>
+      <div class="col-xs-4 text-center">
+        <h4><%= Game.where(:result => "Rojo").count %></h4>
+        <p>Rojo</p>
+      </div>
+      <div class="col-xs-4 text-center">
+        <h4><%= Game.where(:result => "Negro").count %></h4>
+        <p>Negro</p>
+      </div>
+    </div>
+
+    <hr>
 
   </div>
 </div>

@@ -84,8 +84,15 @@ es:
         id: Código
         result: Resultado
         bets: Apuestas
+        winners: Ganadores
         amount: Pozo
         created_at: Fecha de creación
+      bet:
+        id: Código
+        player: Jugador
+        target: Elección
+        amount: Apuesta
+        result: Resultado
     submit:
       create: "Crear nuevo"
       update: "Guardar"
