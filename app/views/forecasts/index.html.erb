@@ -1,0 +1,48 @@
+
+<div class="row">
+  <div class="col-md-9">
+
+    <div class="panel panel-default">
+      <div class="panel-heading panel-heading-toolbox">
+        <div class="panel-title">
+          Pronostico para los próximos 7 dias
+        </div>
+        <div class="panel-toolbar">
+          <% if false %>
+          <%= link_to new_forecast_path, :class => "btn btn-success" do %><i class="fa fa-plus"></i> Nuevo<% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="panel-body">
+
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th><%= t(:date, scope: [:helpers, :label, :forecast]) %></th>
+                <th><%= t(:text, scope: [:helpers, :label, :forecast]) %></th>
+                <th><%= t(:rain, scope: [:helpers, :label, :forecast]) %></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @forecasts.each do |forecast| %>
+              <tr>
+                <td><%= forecast.date %></td>
+                <td><%= forecast.text %></td>
+                <td><%= yes_no forecast.rain %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-3">
+
+    <%= render "info" %>
+
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<%= form_for(@forecast) do |f| %>
+<% if @forecast.errors.any? %>
+<%= render partial: "shared/errors", locals: { resource: @forecast } %>
+<% end %>
+
+<div class="form-group">
+                <%= f.label :date %>
+            <%= f.date_select :date, :class => "form-control" %>
+    </div>
+<div class="form-group">
+                <%= f.label :text %>
+            <%= f.text_field :text, :class => "form-control" %>
+    </div>
+<div class="form-group">
+                <%= f.label :rain %>
+            <%= f.check_box :rain, :class => "form-control" %>
+    </div>
+<div class="actions">
+    <%= f.submit :class => "btn btn-success" %>
+</div>
+<% end %>

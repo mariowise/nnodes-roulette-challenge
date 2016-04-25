@@ -13,7 +13,7 @@ EXPOSE 80
 # Git y descargar código fuente
 RUN mkdir /home/app/webapp
 WORKDIR /home/app/webapp
-RUN git clone https://github.com/mariowise/nnodes-roulette-challenge.git
+RUN git clone https://github.com/mariowise/nnodes-roulette-challenge.git /home/app/webapp
 #ADD . /home/app/webapp
 
 # Start Nginx / Passenger
@@ -29,5 +29,7 @@ RUN cp config/nginx/00_app_env.conf /etc/nginx/conf.d/00_app_env.conf
 # Preparar gemas y assets
 RUN bundle install --binstubs --deployment --without test development
 RUN bundle exec rake assets:precompile
+RUN bundle exec rake db:migrate
 RUN chown -R app:app /home/app
 RUN chmod -R 755 /home/app/webapp/public
+RUN bundle exec whenever -w

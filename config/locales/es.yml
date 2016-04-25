@@ -93,6 +93,10 @@ es:
         target: Elección
         amount: Apuesta
         result: Resultado
+      forecast:
+        date: Fecha
+        text: Pronóstico (English)
+        rain: ¿Lloverá?
     submit:
       create: "Crear nuevo"
       update: "Guardar"

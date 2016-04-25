@@ -22,6 +22,7 @@ class Forecast < ActiveRecord::Base
 	end
 
 	def self.rain_comming?
+		self.request if self.count == 0
 		self
 			.where(:date => Date.today..(Date.today + 6.days))
 			.pluck(:rain)

@@ -1,0 +1,48 @@
+
+<div class="row">
+	<div class="col-md-9">
+
+		<div class="panel panel-default">
+			<div class="panel-heading panel-heading-toolbox">
+				<div class="panel-title">
+					<%= t(:detail, scope: [:helpers, :scaffold]) %>
+				</div>
+				<div class="panel-toolbar">
+					<%= link_to 'Volver', forecasts_path, :class => "btn btn-link" %>
+					<%= link_to edit_forecast_path(@forecast), :class => "btn btn-default" do %><i class="fa fa-pencil"></i> Editar<% end %>
+					<%= link_to @forecast, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" do %><i class="fa fa-trash-o"></i> Eliminar<% end %>
+				</div>
+			</div>
+			<div class="panel-body">
+				
+				<table class="table table-bordered">
+					<tbody>
+					<tr>
+						<th><%= t(:id, scope: [:helpers, :label, :forecast]) %></th>
+						<td><%= @forecast.id %></td>
+					</tr>
+											<tr>
+						  <th><%= t(:date, scope: [:helpers, :label, :forecast]) %>:</th>
+						  <td><%= @forecast.date %></td>
+						</tr>
+											<tr>
+						  <th><%= t(:text, scope: [:helpers, :label, :forecast]) %>:</th>
+						  <td><%= @forecast.text %></td>
+						</tr>
+											<tr>
+						  <th><%= t(:rain, scope: [:helpers, :label, :forecast]) %>:</th>
+						  <td><%= @forecast.rain %></td>
+						</tr>
+										</tbody>
+				</table>
+
+			</div>
+		</div>
+
+	</div>
+	<div class="col-md-3">
+
+		<%= render "info" %>
+
+	</div>
+</div>

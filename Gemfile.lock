@@ -196,6 +196,7 @@ DEPENDENCIES
   rails-erd
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
+  sprockets (~> 3.6)
   sqlite3
   therubyracer
   turbolinks

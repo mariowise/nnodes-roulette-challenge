@@ -11,6 +11,19 @@ Se construyó un modelo con cuatro entidades: 'Game' para almacenar las partidas
 ![alt tag](https://raw.github.com/mariowise/nnodes-roulette-challenge/master/model.png)
 
 
+Running
+--
+
+Para ejecutar el proyecto es necesario tener `ruby@2.1` y `rails@4.2.5`. A partir de ello, y para ejecutarlo en ambiente de desarrollo, 
+
+	$ bundle
+	$ rails s
+
+Para ejecutar tareas cada cierta cantidad de tiempo se hizo uso de la herramienta `whenever` que hace uso del `crontab` del sistema operativo. 
+
+Para producción se utilizó `Docker`.
+
+
 Todo
 --
 

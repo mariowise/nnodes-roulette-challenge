@@ -1,0 +1,32 @@
+
+<div class="row">
+	<div class="col-md-9">
+		
+<div class="panel panel-default">
+	<div class="panel-heading panel-heading-toolbox">
+		<div class="panel-title">
+			<%= t(:edit, scope: [:helpers, :scaffold]) %>
+		</div>
+		<div class="panel-toolbar">
+			<%= link_to 'Volver', @forecast, :class => "btn btn-link" %>
+		</div>
+	</div>
+	<div class="panel-body">
+		
+		<%= render 'form' %>
+
+	</div>
+</div>
+
+	</div>
+	<div class="col-md-3">
+
+		<div class="callout callout-warning">
+	      <h4><i class="fa fa-info-circle"></i> Editar #</h4>
+	      <p>Al editar la información de un #, se <b>reemplaza</b> la infromación preexistente.</p>
+	    </div>  
+		
+		<%= render "info" %>
+
+	</div>
+</div>

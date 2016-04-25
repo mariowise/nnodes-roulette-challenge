@@ -1,5 +1,5 @@
 
-nnodes-roulette:
+web:
   build: .
   ports:
     - "80:80"
