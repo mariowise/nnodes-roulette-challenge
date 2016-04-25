@@ -10,4 +10,24 @@ RSpec.describe Player do
   	player = Player.new 
   	expect(player).not_to be_valid
   end
+
+  it "is valid with a name" do 
+  	player = Player.new(name: "Mario Luis")
+  	expect(player).to be_valid
+  end
+
+  it "is not valid with an empty name" do 
+  	player = Player.new(name: "")
+  	expect(player).not_to be_valid
+  end
+
+  it "is not valid with a name too long" do 
+  	player = Player.new(name: "a" * 256)
+  	expect(player).not_to be_valid
+  end
+
+  it "is not valid with a negative balance" do
+  	player = Player.new(name: "Mario Casino", balance: -1)
+  	expect(player).not_to be_valid
+  end
 end

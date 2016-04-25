@@ -1,8 +1,8 @@
 class Bet < ActiveRecord::Base
   
-  def initialize(attribute = {})
-  	attribute[:target] = Game.spin()
-  	super(attribute)
+  def initialize(args = {})
+  	args[:target] ||= Game.spin()
+  	super(args)
   end
 
   belongs_to :game
@@ -12,17 +12,7 @@ class Bet < ActiveRecord::Base
     "B-#{id.to_s.rjust(5, '0')}"
   end
 
-  def pay(game)
-  	if target == game.result
-  		case target
-  		when "Verde"
-  			player.balance += 15 * amount
-  		when "Rojo"
-  			player.balance += 2 * amount
-  		when "Negro"
-  			player.balance += 2 * amount
-  		end
-  		player.save
-  	end
+  def player
+    Player.with_deleted.find(self.player_id)
   end
 end

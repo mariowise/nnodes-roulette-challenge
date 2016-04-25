@@ -1,5 +1,6 @@
 class Player < ActiveRecord::Base
 	self.per_page = 10
+	acts_as_paranoid
 
 	def initialize(attributes = {})
 		attr_with_defaults = { :balance => 10000 }.merge(attributes)

@@ -11,6 +11,9 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
+    @bets = @player.bets
+      .order(:created_at => :desc)
+      .limit(15)
   end
 
   # GET /players/new

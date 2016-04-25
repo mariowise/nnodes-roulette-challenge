@@ -40,6 +40,30 @@
 					</tbody>
 				</table>
 
+				<h4>Ultimas apuestas</h4>
+				<table class="table">
+					<thead>
+						<tr>
+							<th><%= t(:id, scope: [:helpers, :label, :bet]) %></th>
+							<th><%= t(:date, scope: [:helpers, :label, :bet]) %></th>
+							<th><%= t(:amount, scope: [:helpers, :label, :bet]) %></th>
+							<th><%= t(:target, scope: [:helpers, :label, :bet]) %></th>
+							<th><%= t(:result, scope: [:helpers, :label, :game]) %></th>
+						</tr>
+					</thead>
+						<tbody>
+							<% @bets.each do |bet| %>
+								<tr>
+									<td><%= bet.get_code %></td>
+									<td><%= bet.created_at %></td>
+									<td><%= as_money bet.amount %></td>
+									<td><%= bet.target %></td>
+									<td><%= bet.game.result %></td>
+								</tr>
+							<% end %>
+						</tbody>
+				</table>
+
 			</div>
 		</div>
 

@@ -1,6 +1,9 @@
 Roulette desafío NNodes
 ==
 
+Se debe realizar una simulación, la cual consiste en un grupo dinámico de personas jugando a la ruleta. El objetivo es crear un sistema para monitorear una mesa de casino, donde los jugadores modifican sus apuestas dependiendo del clima.
+
+
 Todo
 --
 
@@ -30,4 +33,13 @@ Todo
 
 * ~~Cualquier otra funcionalidad no mencionada se considera en la evaluación, pero no es obligatoria.~~
 
-* ~~Cualquier cosa no especificada queda a criterio del desarrollador.~~
+* ~~Cualquier cosa no especificada queda a criterio del desarrollador.~
+
+
+Testing
+--
+
+Se construyeron 12 test con la herramienta `rspec` para validar el comportamiento de algunos de los modelos.
+
+	$ rspec . # Toma ~15 segundos con un Mac 16 GB RAM y SSD
+
