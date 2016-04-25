@@ -29,7 +29,7 @@ RUN cp config/nginx/00_app_env.conf /etc/nginx/conf.d/00_app_env.conf
 # Preparar gemas y assets
 RUN bundle install --binstubs --deployment --without test development
 RUN bundle exec rake assets:precompile
-RUN bundle exec rake db:migrate
+RUN RAILS_ENV=production bundle exec rake db:migrate
 RUN chown -R app:app /home/app
 RUN chmod -R 755 /home/app/webapp/public
 RUN bundle exec whenever -w
