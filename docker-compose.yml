@@ -3,3 +3,5 @@ web:
   build: .
   ports:
     - "80:80"
+  # volumes:
+  #   - /opt/sqlite:/home/app/webapp/db

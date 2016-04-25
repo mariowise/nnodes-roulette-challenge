@@ -13,8 +13,8 @@ EXPOSE 80
 # Git y descargar código fuente
 RUN mkdir /home/app/webapp
 WORKDIR /home/app/webapp
-RUN git clone https://github.com/mariowise/nnodes-roulette-challenge.git /home/app/webapp
-#ADD . /home/app/webapp
+#RUN git clone https://github.com/mariowise/nnodes-roulette-challenge.git /home/app/webapp
+ADD . /home/app/webapp
 
 # Start Nginx / Passenger
 RUN rm -f /etc/service/nginx/down
@@ -34,3 +34,6 @@ RUN chown -R app:app /home/app
 RUN chmod -R 755 /home/app/webapp/public
 RUN chmod 0664 /home/app/webapp/log/production.log
 RUN bundle exec whenever -w
+
+VOLUME ["/home/app/webapp"]
+
