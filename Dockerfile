@@ -32,4 +32,5 @@ RUN bundle exec rake assets:precompile
 RUN RAILS_ENV=production bundle exec rake db:migrate
 RUN chown -R app:app /home/app
 RUN chmod -R 755 /home/app/webapp/public
+RUN chmod 0664 /home/app/webapp/log/production.log
 RUN bundle exec whenever -w
