@@ -30,4 +30,16 @@ RSpec.describe Player do
   	player = Player.new(name: "Mario Casino", balance: -1)
   	expect(player).not_to be_valid
   end
+
+  it "recieves a daily bonus of $10.0000" do
+    Player.create([
+      { name: "Ross", balance: 999 },
+      { name: "Monica", balance: 12000 },
+      { name: "Gunter", balance: 1000 }
+    ])
+    Player.daily_bonus()
+    expect(Player.pluck(:balance)[0]).to eq(10999)
+    expect(Player.pluck(:balance)[1]).to eq(22000)
+    expect(Player.pluck(:balance)[2]).to eq(11000)
+  end 
 end

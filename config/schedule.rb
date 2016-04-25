@@ -18,3 +18,15 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+every 3.minutes do
+	runner "Game.create()"
+end
+
+every 1.day do 
+	runner "Player.daily_bonus()"
+end
+
+every 1.hour do 
+	runner "Forecast.request()"
+end

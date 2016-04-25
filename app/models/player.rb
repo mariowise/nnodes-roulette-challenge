@@ -13,6 +13,15 @@ class Player < ActiveRecord::Base
 	validates :name, length: { in: 1..255 }
 	validates :balance, numericality: { greater_than_or_equal_to: 0 }
 
+	def self.daily_bonus
+		self.transaction do
+			all.each do |player|
+				player.balance += 10000
+				player.save
+			end
+		end
+	end
+
 	def get_code
 		"J-#{id.to_s.rjust(5, '0')}"
 	end
